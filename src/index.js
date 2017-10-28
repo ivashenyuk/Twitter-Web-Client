@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Hello from './App';
+import Finde from './App';
 import registerServiceWorker from './registerServiceWorker';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 //ReactDOM.render(<App />, document.getElementById('root'));
-//registerServiceWorker();
 
 ReactDOM.render(
-	<Hello />, 
+	<Finde />,
 	document.getElementById('root')
 	);
-)
+registerServiceWorker();
+injectTapEventPlugin();

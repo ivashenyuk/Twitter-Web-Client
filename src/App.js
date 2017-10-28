@@ -2,10 +2,26 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class Hello extends React.Component {
+var state = true;
+class Finde extends React.Component {
+	getInitialState() {
+		return { state: !state };
+	}; 
 	render() {
-		return <h1>Hello React</h1>
-	}
+		var message = "";
+		if(this.getInitialState()) {
+			message = 'выбран!';
+		}
+		else {
+			message = 'не выбрано!';
+		}
+		return (
+			<div>
+				<input type='checkbox' onChange={this.getInitialState()} defaultChecked={this.getInitialState()} />
+				<p>Чекбокс {message}</p>
+			</div>
+			)
+	};
 }
 
-export default Hello;
+export default Finde;
