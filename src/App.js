@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-var state = true;
 class Finde extends React.Component {
 	getInitialState() {
-		return { state: !state };
+		return { state: true };
 	}; 
 	render() {
 		var message = "";

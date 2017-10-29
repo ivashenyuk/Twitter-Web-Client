@@ -1,17 +1,35 @@
 {
-  "name": "new-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "material-ui": "^1.0.0-beta.18",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-scripts": "1.0.14"
-  },
+  "name": "react-isomorph",
+  "version": "0.0.0",
+  "description": "Isomorphic React Example",
+  "main": "app.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "watch": "watchify app.js -o public/js/bundle.js -v",
+    "browserify": "browserify app.js | uglifyjs > public/js/bundle.js",
+    "build": "npm run browserify ",
+    "start": "npm install"
+  },
+  "author": "Ken Wheeler",
+  "license": "MIT",
+  "dependencies": {
+    "express": "~4.9.7",
+    "express-handlebars": "~1.1.0",
+    "mongoose": "^4.2.6",
+    "node-jsx": "~0.12.4",
+    "react": "~0.14.6",
+    "socket.io": "^1.1.0",
+    "twitter": "^1.2.0"
+  },
+  "devDependencies": {
+    "browserify": "~6.0.3",
+    "nodemon": "^1.2.1",
+    "reactify": "~1.1.1",
+    "uglify-js": "~2.4.15",
+    "watchify": "^3.1.1"
+  },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
   }
 }
